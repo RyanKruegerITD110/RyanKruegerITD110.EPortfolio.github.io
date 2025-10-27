@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — Ryan Krueger</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="w3-bar topbar container" role="navigation" aria-label="Primary">
+  <a class="w3-bar-item brand" href="index.html" aria-label="Home">Ryan Krueger — Portfolio</a>
+  <div class="w3-right w3-hide-small">
+    <a class="w3-bar-item w3-button" href="index.html">Home</a>
+    <a class="w3-bar-item w3-button" href="projects.html">Projects</a>
+    <a class="w3-bar-item w3-button" href="about.html">About</a>
+    <a class="w3-bar-item w3-button" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="container" id="main" tabindex="-1">
+  <div class="main-grid">
+    <aside class="side-nav">
+      <h3>Contact</h3>
+      <p class="small">Preferred methods</p>
+      <ul class="small"><li>Email</li><li>GitHub</li><li>Discord</li></ul>
+    </aside>
+    <section class="content">
+      <div class="breadcrumbs"><span class="small"><a href="index.html">Home</a> › <strong>Contact</strong></span></div>
+      <h1>Contact</h1>
+      <p class="small">Use the long form below to contact me.</p>
+
+      <form class="card" action="#" method="post" novalidate aria-label="Contact form">
+        <fieldset>
+          <legend>Personal info</legend>
+          <div class="form-row">
+            <div class="col"><label for="fname">First name</label><input id="fname" name="fname" required></div>
+            <div class="col"><label for="lname">Last name</label><input id="lname" name="lname" required></div>
+          </div>
+          <label for="email">Email</label><input id="email" name="email" type="email" required>
+          <label for="contact-method">Preferred contact method</label>
+          <select id="contact-method" name="contact-method" required><option>Email</option><option>Discord</option><option>Phone</option></select>
+        </fieldset>
+
+        <fieldset style="margin-top:0.8rem;">
+          <legend>Project details</legend>
+          <label for="project-type">Project type</label>
+          <select id="project-type" name="project-type"><option>Web</option><option>Design</option><option>Other</option></select>
+          <label for="message">Project description</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <div style="margin-top:0.6rem;">
+            <button class="btn-primary" type="submit">Send message</button>
+            <button class="btn-ghost" type="reset">Reset</button>
+          </div>
+        </fieldset>
+      </form>
+
+    </section>
+  </div>
+</main>
+<footer class="container footer">© Ryan Krueger</footer>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ryan Krueger — Portfolio</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="w3-bar topbar container" role="navigation" aria-label="Primary">
+  <a class="w3-bar-item brand" href="index.html" aria-label="Home">Ryan Krueger — Portfolio</a>
+  <div class="w3-right w3-hide-small">
+    <a class="w3-bar-item w3-button" href="index.html">Home</a>
+    <a class="w3-bar-item w3-button" href="projects.html">Projects</a>
+    <a class="w3-bar-item w3-button" href="about.html">About</a>
+    <a class="w3-bar-item w3-button" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+  <main class="container" id="main" tabindex="-1">
+    <div class="main-grid" role="main">
+      <aside class="side-nav" aria-label="Secondary navigation">
+        <div class="breadcrumbs">
+          <span class="small"><a href="index.html">Home</a> › <strong>Overview</strong></span>
+        </div>
+        <div class="w3-bar-block">
+          <a href="index.html" class="w3-bar-item w3-button">Overview</a>
+          <a href="projects.html" class="w3-bar-item w3-button">Projects</a>
+          <a href="about.html" class="w3-bar-item w3-button">About</a>
+          <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+          <a href="sitemap.html" class="w3-bar-item w3-button">Sitemap</a>
+        </div>
+        <div style="margin-top:1rem;">
+          <div class="small">Status</div>
+          <div class="status-pill" aria-live="polite">Hiatus</div>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div class="breadcrumbs" aria-hidden="true"><span class="small">Home › <strong>Overview</strong></span></div>
+        <h1>Ryan Krueger's E-Portfolio</h1>
+        
+        <div class="w3-row-padding" style="margin-top:1rem;">
+          <div class="w3-col m6 l4">
+            <div class="card">
+              <h3>Featured Work</h3>
+              <p class="small">I have several projects I've done over the years and several more I plan to add in the future. For more information about them click the link below</p>
+              <p><a href="projects.html">View projects →</a></p>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <h2>Education</h2>
+        <div class="w3-panel card">
+          <button onclick="toggleAccordion('acc1')" class="btn-ghost" aria-expanded="false" aria-controls="acc1">Toggle details</button>
+          <div id="acc1" class="w3-animate-opacity" hidden>
+            <p class="small">Advanced High School Diploma from Westfield Highschool</p>
+            <p class="small">On track to complete a Information System Technology program from NOVA</p>
+            <p class="small">I baseline education in java, Pythron, and HTML</p>
+          </div>
+        </div>
+
+        <h2 style="margin-top:1rem;">Short form</h2>
+        <form class="card" action="contact.html" method="get" aria-label="Short signup form">
+          <label for="news-name">Name</label>
+          <input id="news-name" name="name" required>
+          <label for="news-email">Email</label>
+          <input id="news-email" name="email" type="email" required>
+          <label for="news-interest">Interest</label>
+          <select id="news-interest" name="interest">
+            <option>Projects</option><option>Collab</option><option>Other</option>
+          </select>
+          <div style="margin-top:0.6rem;">
+            <button class="btn-primary" type="submit">Sign up</button>
+          </div>
+        </form>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Search modal (W3.CSS modal style) -->
+  <div id="searchModal" class="w3-modal" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+    <div class="w3-modal-content w3-animate-top" style="max-width:600px;">
+      <header class="w3-container w3-light-grey">
+        <span onclick="document.getElementById('searchModal').style.display='none'" class="w3-button w3-display-topright" aria-label="Close search">&times;</span>
+        <h3 id="searchTitle">Search the site</h3>
+      </header>
+      <div class="w3-container">
+        <form onsubmit="performSearch(event)" role="search">
+          <label for="q" class="visually-hidden">Search query</label>
+          <input id="q" name="q" placeholder="Search..." aria-label="Search input">
+          <p class="small">This demo searches the visible site content (client-side).</p>
+          <button class="btn-primary" type="submit">Search</button>
+        </form>
+        <div id="searchResults" style="margin-top:1rem;"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="container footer" role="contentinfo">
+    <p>© Ryan Krueger — Sample portfolio. <a href="sitemap.html">Sitemap</a></p>
+  </footer>
+
+<script>
+// Simple accordion
+function toggleAccordion(id){
+  var el = document.getElementById(id);
+  if(!el) return;
+  var expanded = !el.hidden;
+  el.hidden = expanded;
+  // update button aria-expanded
+  var btn = el.previousElementSibling;
+  if(btn) btn.setAttribute('aria-expanded', String(!expanded));
+}
+
+// Simple search: find pages and show matches (client-side demo)
+function performSearch(e){
+  e.preventDefault();
+  var q = document.getElementById('q').value.toLowerCase();
+  var results = [];
+  var pages = {
+    'Home':'index.html',
+    'Projects':'projects.html',
+    'About':'about.html',
+    'Contact':'contact.html'
+  };
+  for(var title in pages){
+    if(title.toLowerCase().includes(q) || q==='' ){
+      results.push('<div class="card"><a href="'+pages[title]+'"><strong>'+title+'</strong></a></div>');
+    }
+  }
+  document.getElementById('searchResults').innerHTML = results.join('');
+}
+</script>
+</body>
+</html>

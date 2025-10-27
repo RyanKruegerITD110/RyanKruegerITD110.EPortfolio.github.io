@@ -1,0 +1,14 @@
+/* styles.css - colors and small components */
+h1,h2,h3{ color:#b3a20c; margin-top:0; }
+a{ color:var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+.card { padding:1rem; border-radius:8px; border:1px solid #efeee6; background:linear-gradient(180deg, #ffffff, #fffef9); }
+.small { font-size:0.9rem; color: #555; }
+.form-row{ display:flex; gap:1rem; }
+.form-row .col{ flex:1; }
+.btn-primary{ background:var(--accent); color:white; padding:0.6rem 1rem; border-radius:6px; border:none; cursor:pointer; }
+.btn-ghost{ background:transparent; border:1px solid #dcdacf; padding:0.5rem 0.8rem; border-radius:6px; cursor:pointer; }
+label{ font-weight:600; display:block; margin-bottom:0.3rem; }
+input, textarea, select{ width:100%; padding:0.5rem; border-radius:6px; border:1px solid #eae8db; background:#fffffb; }
+footer a{ color:var(--accent); }
+.visually-hidden { position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }

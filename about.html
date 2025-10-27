@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-5"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About — Ryan Krueger</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="w3-bar topbar container" role="navigation" aria-label="Primary">
+  <a class="w3-bar-item brand" href="index.html" aria-label="Home">Ryan Krueger — Portfolio</a>
+  <div class="w3-right w3-hide-small">
+    <a class="w3-bar-item w3-button" href="index.html">Home</a>
+    <a class="w3-bar-item w3-button" href="projects.html">Projects</a>
+    <a class="w3-bar-item w3-button" href="about.html">About</a>
+    <a class="w3-bar-item w3-button" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="container" id="main" tabindex="-1">
+  <div class="main-grid">
+    <aside class="side-nav" aria-label="About navigation">
+      <h3>About</h3>
+      <p class="small">Quick links</p>
+      <a href="index.html" class="w3-button w3-block">Overview</a>
+      <a href="projects.html" class="w3-button w3-block">Projects</a>
+    </aside>
+    <section class="content">
+      <div class="breadcrumbs"><span class="small"><a href="index.html">Home</a> › <strong>About</strong></span></div>
+      <h1>About Me</h1>
+      <p class="small">I am Ryan Krueger and was born in 2003. I'm a man entering into the programming sphere that currently has Java and Python under my belt, along with some game design and story telling from my hobbies.</p>
+
+      <h2>Skills</h2>
+      <div class="w3-row-padding">
+        <div class="w3-col m6">
+          <div class="card"><h3>Web</h3><p class="small">HTML, CSS (W3.CSS), basic JS</p></div>
+        </div>
+        <div class="w3-col m6">
+          <div class="card"><h3>Design</h3><p class="small">Wireframing, layouts, game design</p></div>
+        </div>
+        <div class="w3-col m6">
+          <div class="card"><h3>Writing</h3><p class="small">Fantasy, drama</p></div>
+        </div>
+        <div class="w3-col m6">
+          <div class="card"><h3>Art</h3><p class="small">Canva, multimedia, pixel art</p></div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:1rem;">Past Roles</h2>
+<div class="card">
+  <button onclick="toggleAccordion('role1')" class="btn-ghost" aria-expanded="false" aria-controls="role1">
+    View roles
+  </button>
+  <div id="role1" hidden class="w3-animate-opacity">
+    <ul class="small">
+      <li>Decade long Church Volunteer</li>
+      <li>Chick-fil-a Team Member</li>
+      <li>Full Time College Student</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function toggleAccordion(id) {
+    const section = document.getElementById(id);
+    const button = document.querySelector(`[aria-controls="${id}"]`);
+    
+    // Toggle the "hidden" attribute
+    const isHidden = section.hasAttribute("hidden");
+    if (isHidden) {
+      section.removeAttribute("hidden");
+      button.setAttribute("aria-expanded", "true");
+    } else {
+      section.setAttribute("hidden", "");
+      button.setAttribute("aria-expanded", "false");
+    }
+  }
+</script>
+
+    </section>
+  </div>
+</main>
+<footer class="container footer">© Ryan Krueger</footer>
+</body>
+</html>

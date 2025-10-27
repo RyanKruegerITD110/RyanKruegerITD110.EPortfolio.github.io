@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects — Ryan Krueger</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="layout.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="w3-bar topbar container" role="navigation" aria-label="Primary">
+  <a class="w3-bar-item brand" href="index.html" aria-label="Home">Ryan Krueger — Portfolio</a>
+  <div class="w3-right w3-hide-small">
+    <a class="w3-bar-item w3-button" href="index.html">Home</a>
+    <a class="w3-bar-item w3-button" href="projects.html">Projects</a>
+    <a class="w3-bar-item w3-button" href="about.html">About</a>
+    <a class="w3-bar-item w3-button" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="container" id="main" tabindex="-1">
+  <div class="main-grid">
+    <aside class="side-nav" aria-label="Project filters">
+      <h3>Filters</h3>
+      <form id="filterForm" class="small" onsubmit="applyFilter(event)">
+        <label for="type">Project type</label>
+        <select id="type" name="type" aria-label="Project type">
+          <option value="">All</option>
+          <option>Web</option><option>Design</option><option>Other</option>
+        </select>
+        <label for="year">Year</label>
+        <select id="year" name="year">
+          <option value="">All</option><option>2024</option><option>2023</option>
+        </select>
+        <div style="margin-top:0.6rem;"><button class="btn-primary" type="submit">Apply</button></div>
+      </form>
+      <div style="margin-top:1rem;">
+        <div class="breadcrumbs small"><a href="index.html">Home</a> › <strong>Projects</strong></div>
+      </div>
+    </aside>
+    <section class="content">
+      <h1>Projects</h1>
+      <p class="small">A set of project cards. Use the filter dropdown on the left to simulate a search/filter.</p>
+
+      <div id="projectList" class="w3-row-padding">
+        <div class="w3-col m4">
+          <div class="card" data-type="Web" data-year="2024">
+            <h3>Portfolio site</h3>
+            <p class="small">A sample portfolio built with W3.CSS. Made to conclude my web design course and to act as an E-portfolio</p>
+          </div>
+        </div>
+        <div class="w3-col m4">
+          <div class="card" data-type="Web" data-year="2024">
+            <h3>Art Gallery</h3>
+            <p class="small">A culmination of every art piece I've made. Holds both new and old art, and everything I currently have in the works</p>
+          </div>
+        </div>
+        <div class="w3-col m4">
+          <div class="card" data-type="Design" data-year="2023">
+            <h3>Branding</h3>
+            <p class="small">Brand and logo design project. A small logo I created for the for my professional life</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+<script>
+function applyFilter(e){ e.preventDefault(); var t=document.getElementById('type').value; var y=document.getElementById('year').value;
+ var cards = document.querySelectorAll('#projectList .card'); cards.forEach(function(c){
+   var ok = (t==='' || c.getAttribute('data-type')===t) && (y==='' || c.getAttribute('data-year')===y);
+   c.parentElement.style.display = ok ? '' : 'none';
+ });
+}
+</script>
+<footer class="container footer">© Ryan Krueger</footer>
+</body>
+</html>
